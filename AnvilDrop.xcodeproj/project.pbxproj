@@ -16,6 +16,8 @@
 		11DFF7B31B56C36D00B6D1F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7B21B56C36D00B6D1F4 /* Images.xcassets */; };
 		11DFF7B61B56C36D00B6D1F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7B41B56C36D00B6D1F4 /* LaunchScreen.xib */; };
 		11DFF7C21B56C36E00B6D1F4 /* AnvilDropTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7C11B56C36E00B6D1F4 /* AnvilDropTests.m */; };
+		11DFF7CF1B56C54F00B6D1F4 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7CE1B56C54F00B6D1F4 /* GameOverScene.m */; };
+		11DFF7D11B56C8F600B6D1F4 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7D01B56C8F600B6D1F4 /* assets.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		11DFF7BB1B56C36E00B6D1F4 /* AnvilDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnvilDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DFF7C01B56C36E00B6D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11DFF7C11B56C36E00B6D1F4 /* AnvilDropTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnvilDropTests.m; sourceTree = "<group>"; };
+		11DFF7CD1B56C54F00B6D1F4 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		11DFF7CE1B56C54F00B6D1F4 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		11DFF7D01B56C8F600B6D1F4 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +91,15 @@
 		11DFF79F1B56C36D00B6D1F4 /* AnvilDrop */ = {
 			isa = PBXGroup;
 			children = (
+				11DFF7D01B56C8F600B6D1F4 /* assets.atlas */,
 				11DFF7A41B56C36D00B6D1F4 /* AppDelegate.h */,
 				11DFF7A51B56C36D00B6D1F4 /* AppDelegate.m */,
-				11DFF7A71B56C36D00B6D1F4 /* GameScene.h */,
-				11DFF7A81B56C36D00B6D1F4 /* GameScene.m */,
 				11DFF7AC1B56C36D00B6D1F4 /* GameViewController.h */,
 				11DFF7AD1B56C36D00B6D1F4 /* GameViewController.m */,
+				11DFF7A71B56C36D00B6D1F4 /* GameScene.h */,
+				11DFF7A81B56C36D00B6D1F4 /* GameScene.m */,
+				11DFF7CD1B56C54F00B6D1F4 /* GameOverScene.h */,
+				11DFF7CE1B56C54F00B6D1F4 /* GameOverScene.m */,
 				11DFF7AF1B56C36D00B6D1F4 /* Main.storyboard */,
 				11DFF7AA1B56C36D00B6D1F4 /* GameScene.sks */,
 				11DFF7B21B56C36D00B6D1F4 /* Images.xcassets */,
@@ -210,6 +218,7 @@
 				11DFF7B61B56C36D00B6D1F4 /* LaunchScreen.xib in Resources */,
 				11DFF7B31B56C36D00B6D1F4 /* Images.xcassets in Resources */,
 				11DFF7AB1B56C36D00B6D1F4 /* GameScene.sks in Resources */,
+				11DFF7D11B56C8F600B6D1F4 /* assets.atlas in Resources */,
 				11DFF7B11B56C36D00B6D1F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DFF7CF1B56C54F00B6D1F4 /* GameOverScene.m in Sources */,
 				11DFF7AE1B56C36D00B6D1F4 /* GameViewController.m in Sources */,
 				11DFF7A61B56C36D00B6D1F4 /* AppDelegate.m in Sources */,
 				11DFF7A91B56C36D00B6D1F4 /* GameScene.m in Sources */,
