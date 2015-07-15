@@ -17,18 +17,21 @@
     self = [super initWithSize:size];
     
     if (self) {
+        
         SKSpriteNode* background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.png"];
         background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         [self addChild:background];
         
-        // 1
         SKLabelNode* gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        gameOverLabel.fontSize = 20;
+        gameOverLabel.fontSize = 15;
         gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-        
-        gameOverLabel.text = @"Game Over. Tap to Start New Game.";
+        NSInteger lastGameScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"lastGameScore"];
+        NSString *endString = [NSString stringWithFormat:@"Last Game: %lu anvils. Tap to start new game.", lastGameScore];
+        gameOverLabel.text = endString;
         [self addChild:gameOverLabel];
+        
     }
+    
     return self;
 }
 
