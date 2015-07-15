@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11DFF7A31B56C36D00B6D1F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7A21B56C36D00B6D1F4 /* main.m */; };
+		11DFF7A61B56C36D00B6D1F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7A51B56C36D00B6D1F4 /* AppDelegate.m */; };
+		11DFF7A91B56C36D00B6D1F4 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7A81B56C36D00B6D1F4 /* GameScene.m */; };
+		11DFF7AB1B56C36D00B6D1F4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7AA1B56C36D00B6D1F4 /* GameScene.sks */; };
+		11DFF7AE1B56C36D00B6D1F4 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7AD1B56C36D00B6D1F4 /* GameViewController.m */; };
+		11DFF7B11B56C36D00B6D1F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7AF1B56C36D00B6D1F4 /* Main.storyboard */; };
+		11DFF7B31B56C36D00B6D1F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7B21B56C36D00B6D1F4 /* Images.xcassets */; };
+		11DFF7B61B56C36D00B6D1F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DFF7B41B56C36D00B6D1F4 /* LaunchScreen.xib */; };
+		11DFF7C21B56C36E00B6D1F4 /* AnvilDropTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DFF7C11B56C36E00B6D1F4 /* AnvilDropTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11DFF7BC1B56C36E00B6D1F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11DFF7951B56C36D00B6D1F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11DFF79C1B56C36D00B6D1F4;
+			remoteInfo = AnvilDrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11DFF79D1B56C36D00B6D1F4 /* AnvilDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnvilDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DFF7A11B56C36D00B6D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11DFF7A21B56C36D00B6D1F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11DFF7A41B56C36D00B6D1F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11DFF7A51B56C36D00B6D1F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11DFF7A71B56C36D00B6D1F4 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		11DFF7A81B56C36D00B6D1F4 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		11DFF7AA1B56C36D00B6D1F4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		11DFF7AC1B56C36D00B6D1F4 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		11DFF7AD1B56C36D00B6D1F4 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		11DFF7B01B56C36D00B6D1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11DFF7B21B56C36D00B6D1F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		11DFF7B51B56C36D00B6D1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		11DFF7BB1B56C36E00B6D1F4 /* AnvilDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnvilDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DFF7C01B56C36E00B6D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11DFF7C11B56C36E00B6D1F4 /* AnvilDropTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnvilDropTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11DFF79A1B56C36D00B6D1F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DFF7B81B56C36E00B6D1F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11DFF7941B56C36D00B6D1F4 = {
+			isa = PBXGroup;
+			children = (
+				11DFF79F1B56C36D00B6D1F4 /* AnvilDrop */,
+				11DFF7BE1B56C36E00B6D1F4 /* AnvilDropTests */,
+				11DFF79E1B56C36D00B6D1F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11DFF79E1B56C36D00B6D1F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11DFF79D1B56C36D00B6D1F4 /* AnvilDrop.app */,
+				11DFF7BB1B56C36E00B6D1F4 /* AnvilDropTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11DFF79F1B56C36D00B6D1F4 /* AnvilDrop */ = {
+			isa = PBXGroup;
+			children = (
+				11DFF7A41B56C36D00B6D1F4 /* AppDelegate.h */,
+				11DFF7A51B56C36D00B6D1F4 /* AppDelegate.m */,
+				11DFF7A71B56C36D00B6D1F4 /* GameScene.h */,
+				11DFF7A81B56C36D00B6D1F4 /* GameScene.m */,
+				11DFF7AA1B56C36D00B6D1F4 /* GameScene.sks */,
+				11DFF7AC1B56C36D00B6D1F4 /* GameViewController.h */,
+				11DFF7AD1B56C36D00B6D1F4 /* GameViewController.m */,
+				11DFF7AF1B56C36D00B6D1F4 /* Main.storyboard */,
+				11DFF7B21B56C36D00B6D1F4 /* Images.xcassets */,
+				11DFF7B41B56C36D00B6D1F4 /* LaunchScreen.xib */,
+				11DFF7A01B56C36D00B6D1F4 /* Supporting Files */,
+			);
+			path = AnvilDrop;
+			sourceTree = "<group>";
+		};
+		11DFF7A01B56C36D00B6D1F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11DFF7A11B56C36D00B6D1F4 /* Info.plist */,
+				11DFF7A21B56C36D00B6D1F4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11DFF7BE1B56C36E00B6D1F4 /* AnvilDropTests */ = {
+			isa = PBXGroup;
+			children = (
+				11DFF7C11B56C36E00B6D1F4 /* AnvilDropTests.m */,
+				11DFF7BF1B56C36E00B6D1F4 /* Supporting Files */,
+			);
+			path = AnvilDropTests;
+			sourceTree = "<group>";
+		};
+		11DFF7BF1B56C36E00B6D1F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11DFF7C01B56C36E00B6D1F4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11DFF79C1B56C36D00B6D1F4 /* AnvilDrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DFF7C51B56C36E00B6D1F4 /* Build configuration list for PBXNativeTarget "AnvilDrop" */;
+			buildPhases = (
+				11DFF7991B56C36D00B6D1F4 /* Sources */,
+				11DFF79A1B56C36D00B6D1F4 /* Frameworks */,
+				11DFF79B1B56C36D00B6D1F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnvilDrop;
+			productName = AnvilDrop;
+			productReference = 11DFF79D1B56C36D00B6D1F4 /* AnvilDrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11DFF7BA1B56C36E00B6D1F4 /* AnvilDropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DFF7C81B56C36E00B6D1F4 /* Build configuration list for PBXNativeTarget "AnvilDropTests" */;
+			buildPhases = (
+				11DFF7B71B56C36E00B6D1F4 /* Sources */,
+				11DFF7B81B56C36E00B6D1F4 /* Frameworks */,
+				11DFF7B91B56C36E00B6D1F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11DFF7BD1B56C36E00B6D1F4 /* PBXTargetDependency */,
+			);
+			name = AnvilDropTests;
+			productName = AnvilDropTests;
+			productReference = 11DFF7BB1B56C36E00B6D1F4 /* AnvilDropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11DFF7951B56C36D00B6D1F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Larry Feldman";
+				TargetAttributes = {
+					11DFF79C1B56C36D00B6D1F4 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					11DFF7BA1B56C36E00B6D1F4 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 11DFF79C1B56C36D00B6D1F4;
+					};
+				};
+			};
+			buildConfigurationList = 11DFF7981B56C36D00B6D1F4 /* Build configuration list for PBXProject "AnvilDrop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11DFF7941B56C36D00B6D1F4;
+			productRefGroup = 11DFF79E1B56C36D00B6D1F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11DFF79C1B56C36D00B6D1F4 /* AnvilDrop */,
+				11DFF7BA1B56C36E00B6D1F4 /* AnvilDropTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11DFF79B1B56C36D00B6D1F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DFF7B61B56C36D00B6D1F4 /* LaunchScreen.xib in Resources */,
+				11DFF7B31B56C36D00B6D1F4 /* Images.xcassets in Resources */,
+				11DFF7AB1B56C36D00B6D1F4 /* GameScene.sks in Resources */,
+				11DFF7B11B56C36D00B6D1F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DFF7B91B56C36E00B6D1F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11DFF7991B56C36D00B6D1F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DFF7AE1B56C36D00B6D1F4 /* GameViewController.m in Sources */,
+				11DFF7A61B56C36D00B6D1F4 /* AppDelegate.m in Sources */,
+				11DFF7A91B56C36D00B6D1F4 /* GameScene.m in Sources */,
+				11DFF7A31B56C36D00B6D1F4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DFF7B71B56C36E00B6D1F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DFF7C21B56C36E00B6D1F4 /* AnvilDropTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11DFF7BD1B56C36E00B6D1F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11DFF79C1B56C36D00B6D1F4 /* AnvilDrop */;
+			targetProxy = 11DFF7BC1B56C36E00B6D1F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11DFF7AF1B56C36D00B6D1F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11DFF7B01B56C36D00B6D1F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11DFF7B41B56C36D00B6D1F4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11DFF7B51B56C36D00B6D1F4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11DFF7C31B56C36E00B6D1F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		11DFF7C41B56C36E00B6D1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11DFF7C61B56C36E00B6D1F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AnvilDrop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11DFF7C71B56C36E00B6D1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AnvilDrop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		11DFF7C91B56C36E00B6D1F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnvilDropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnvilDrop.app/AnvilDrop";
+			};
+			name = Debug;
+		};
+		11DFF7CA1B56C36E00B6D1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnvilDropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnvilDrop.app/AnvilDrop";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11DFF7981B56C36D00B6D1F4 /* Build configuration list for PBXProject "AnvilDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DFF7C31B56C36E00B6D1F4 /* Debug */,
+				11DFF7C41B56C36E00B6D1F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DFF7C51B56C36E00B6D1F4 /* Build configuration list for PBXNativeTarget "AnvilDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DFF7C61B56C36E00B6D1F4 /* Debug */,
+				11DFF7C71B56C36E00B6D1F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		11DFF7C81B56C36E00B6D1F4 /* Build configuration list for PBXNativeTarget "AnvilDropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DFF7C91B56C36E00B6D1F4 /* Debug */,
+				11DFF7CA1B56C36E00B6D1F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11DFF7951B56C36D00B6D1F4 /* Project object */;
+}
