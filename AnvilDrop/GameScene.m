@@ -1,76 +1,52 @@
 //
-//  MyScene.m
-//  BreakoutSpriteKitTutorial
+//  GameScene.m
 //
-//  Created by Barbara Reichart on 10/2/13.
-//  Copyright (c) 2013 Barbara Köhler. All rights reserved.
-//
+//  Created by Larry Feldman
+
 
 #import "GameScene.h"
 #import "GameOverScene.h"
 
-static NSString* ballCategoryName = @"ball";
-static NSString* paddleCategoryName = @"paddle";
-static NSString* blockCategoryName = @"block";
-static NSString* blockNodeCategoryName = @"blockNode";
 
-static const uint32_t ballCategory  = 0x1 << 0;  // 00000000000000000000000000000001
+static const uint32_t anvilCategory  = 0x1 << 0;  // 00000000000000000000000000000001
 static const uint32_t bottomCategory = 0x1 << 1; // 00000000000000000000000000000010
-static const uint32_t blockCategory = 0x1 << 2;  // 00000000000000000000000000000100
 static const uint32_t paddleCategory = 0x1 << 3; // 00000000000000000000000000001000
 
 
 @interface GameScene()
 
+@property (strong, nonatomic) NSTimer *blockTimer;
 
 @end
-
 
 @implementation GameScene
 
 -(id)initWithSize:(CGSize)size {
+    
     if (self = [super initWithSize:size]) {
+        
         SKSpriteNode* background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.png"];
         background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         [self addChild:background];
         
-        self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
+        self.physicsWorld.gravity = CGVectorMake(-1.0f, -1.0f);
         
-        /*
-        // 1 Create an physics body that borders the screen
         SKPhysicsBody* borderBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         // 2 Set physicsBody of scene to borderBody
         self.physicsBody = borderBody;
-        // 3 Set the friction of that physicsBody to 0
-        self.physicsBody.friction = 0.0f; */
         
-        SKSpriteNode* ball = [SKSpriteNode spriteNodeWithImageNamed: @"anvil.png"];
-        ball.name = ballCategoryName;
-        ball.position = CGPointMake(self.frame.size.width/3, self.frame.size.height/3);
-        [self addChild:ball];
-        
-        // 2
-        ball.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ball.frame.size];
-        // 3
-        ball.physicsBody.friction = 0.0f;
-        // 4
-        ball.physicsBody.restitution = 1.0f;
-        // 5
-        ball.physicsBody.linearDamping = 0.0f;
-        // 6
-        ball.physicsBody.allowsRotation = NO;
-        
-        [ball.physicsBody applyImpulse:CGVectorMake(10.0f, -10.0f)];
+      //  [ball.physicsBody applyImpulse:CGVectorMake(10.0f, -10.0f)];
         
         SKSpriteNode* paddle = [[SKSpriteNode alloc] initWithImageNamed: @"paddle"];
-        paddle.name = paddleCategoryName;
+        paddle.name = @"paddleCategoryName";
         paddle.position = CGPointMake(CGRectGetMidX(self.frame), paddle.frame.size.height * 0.6f);
         [self addChild:paddle];
         paddle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:paddle.frame.size];
         paddle.physicsBody.restitution = 0.1f;
         paddle.physicsBody.friction = 0.4f;
-        // make physicsBody static
-        paddle.physicsBody.dynamic = NO;
+        
+        paddle.physicsBody.affectedByGravity = NO;
+        paddle.physicsBody.contactTestBitMask = anvilCategory;
         
         CGRect bottomRect = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 1);
         SKNode* bottom = [SKNode node];
@@ -78,34 +54,15 @@ static const uint32_t paddleCategory = 0x1 << 3; // 0000000000000000000000000000
         [self addChild:bottom];
         
         bottom.physicsBody.categoryBitMask = bottomCategory;
-        ball.physicsBody.categoryBitMask = ballCategory;
         paddle.physicsBody.categoryBitMask = paddleCategory;
-        
-        ball.physicsBody.contactTestBitMask = bottomCategory | blockCategory;
         
         self.physicsWorld.contactDelegate = self;
         
-        // 1 Store some useful variables
-        int numberOfBlocks = 3;
-        int blockWidth = [SKSpriteNode spriteNodeWithImageNamed:@"anvil.png"].size.width;
-        float padding = 20.0f;
-        // 2 Calculate the xOffset
-        float xOffset = (self.frame.size.width - (blockWidth * numberOfBlocks + padding * (numberOfBlocks-1))) / 2;
-        // 3 Create the blocks and add them to the scene
-        for (int i = 1; i <= numberOfBlocks; i++) {
-            SKSpriteNode* block = [SKSpriteNode spriteNodeWithImageNamed:@"anvil.png"];
-            block.position = CGPointMake((i-0.5f)*block.frame.size.width + (i-1)*padding + xOffset, self.frame.size.height * 0.8f);
-            block.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:block.frame.size];
-            block.physicsBody.allowsRotation = NO;
-            block.physicsBody.friction = 0.0f;
-            block.name = blockCategoryName;
-            block.physicsBody.categoryBitMask = blockCategory;
-            [self addChild:block];
-        }
+        self.blockTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(dropAnvil) userInfo:nil repeats:YES];
     }
+
     return self;
 }
-
 
 
 
@@ -115,62 +72,68 @@ static const uint32_t paddleCategory = 0x1 << 3; // 0000000000000000000000000000
     CGPoint touchLocation = [touch locationInNode:self];
     CGPoint previousLocation = [touch previousLocationInNode:self];
     // 3 Get node for paddle
-    SKSpriteNode* paddle = (SKSpriteNode*)[self childNodeWithName: paddleCategoryName];
+    SKSpriteNode* player = (SKSpriteNode*)[self childNodeWithName: @"paddleCategoryName"];
     // 4 Calculate new position along x for paddle
-    int paddleX = paddle.position.x + (touchLocation.x - previousLocation.x);
-    paddle.position = CGPointMake(paddleX, paddle.position.y);
+    int playerX = player.position.x + (touchLocation.x - previousLocation.x);
+    player.position = CGPointMake(playerX, player.position.y);
+    
+}
+
+-(void)dropAnvil {
+    
+    SKSpriteNode* anvil = [SKSpriteNode spriteNodeWithImageNamed: @"anvil.png"];
+    
+    int minX = anvil.size.width / 2;
+    int maxX = self.frame.size.width - anvil.size.width / 2;
+    int rangeX = maxX - minX;
+    int actualXStart = (arc4random() % rangeX) + minX;
+    anvil.position = CGPointMake(actualXStart, self.frame.size.height*0.95f);
+    anvil.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:anvil.frame.size];
+    anvil.physicsBody.allowsRotation = NO;
+    anvil.physicsBody.categoryBitMask = anvilCategory;
+    anvil.physicsBody.contactTestBitMask = bottomCategory;
+    [self addChild:anvil];
+
+}
+
+
+
+- (void)didBeginContact:(SKPhysicsContact*)contact {
+    
+    NSLog(@"here");
+    
+     if (contact.bodyA.categoryBitMask == anvilCategory && contact.bodyB.categoryBitMask == paddleCategory) {
+        
+        GameOverScene* gameOverScene = [[GameOverScene alloc] initWithSize:self.frame.size];
+        [self.view presentScene:gameOverScene];
+        
+    }
+    
+    if (contact.bodyA.categoryBitMask == paddleCategory && contact.bodyB.categoryBitMask == anvilCategory) {
+        
+        GameOverScene* gameOverScene = [[GameOverScene alloc] initWithSize:self.frame.size];
+        [self.view presentScene:gameOverScene];
+        
+    }
+    
+    if (contact.bodyA.categoryBitMask == anvilCategory && contact.bodyB.categoryBitMask == bottomCategory) {
+        
+        [contact.bodyA.node removeFromParent];
+
+    }
+    
+    if (contact.bodyA.categoryBitMask == bottomCategory && contact.bodyB.categoryBitMask == anvilCategory) {
+       
+        [contact.bodyB.node removeFromParent];
+        
+    }
+
     
 }
 
 
-- (void)didBeginContact:(SKPhysicsContact*)contact {
-    // 1 Create local variables for two physics bodies
-    SKPhysicsBody* firstBody;
-    SKPhysicsBody* secondBody;
-    // 2 Assign the two physics bodies so that the one with the lower category is always stored in firstBody
-    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
-        firstBody = contact.bodyA;
-        secondBody = contact.bodyB;
-    } else {
-        firstBody = contact.bodyB;
-        secondBody = contact.bodyA;
-    }
-    // 3 react to the contact between ball and bottom
-    if (firstBody.categoryBitMask == ballCategory && secondBody.categoryBitMask == bottomCategory) {
-        //TODO: Replace the log statement with display of Game Over Scene
-        GameOverScene* gameOverScene = [[GameOverScene alloc] initWithSize:self.frame.size playerWon:NO];
-        [self.view presentScene:gameOverScene];
-    }
-    if (firstBody.categoryBitMask == ballCategory && secondBody.categoryBitMask == blockCategory) {
-        [secondBody.node removeFromParent];
-        if ([self isGameWon]) {
-            GameOverScene* gameWonScene = [[GameOverScene alloc] initWithSize:self.frame.size playerWon:YES];
-            [self.view presentScene:gameWonScene];
-        }
-    }
-}
-
--(BOOL) isGameWon {
-    int numberOfBricks = 0;
-    for (SKNode* node in self.children) {
-        if ([node.name isEqual: blockCategoryName]) {
-            numberOfBricks++;
-        }
-    }
-    return numberOfBricks <= 0;
-}
-
-
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-    SKNode* ball = [self childNodeWithName: ballCategoryName];
-    static int maxSpeed = 1000;
-    float speed = sqrt(ball.physicsBody.velocity.dx*ball.physicsBody.velocity.dx + ball.physicsBody.velocity.dy * ball.physicsBody.velocity.dy);
-    if (speed > maxSpeed) {
-        ball.physicsBody.linearDamping = 0.4f;
-    } else {
-        ball.physicsBody.linearDamping = 0.0f;
-    }
+-(void)update:(CFTimeInterval)currentTime {  // roughly 30 frames per second
+    
 }
 
 @end

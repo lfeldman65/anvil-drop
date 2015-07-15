@@ -10,6 +10,6 @@
 
 @interface GameOverScene : SKScene
 
-- (id)initWithSize:(CGSize)size playerWon:(BOOL)isWon;
+- (id)initWithSize:(CGSize)size;
 
 @end
